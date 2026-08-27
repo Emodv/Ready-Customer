@@ -28,6 +28,7 @@ Businesses define the customer they want. ReadyCustomer captures customer demand
 - Intent data and modern prospecting: https://readycustomer.ca/guides/death-of-the-cold-call-intent-data/
 - The cost of bad leads and pipeline quality: https://readycustomer.ca/guides/cost-of-bad-leads/
 - Why businesses are buying customers, not marketing activity: https://readycustomer.ca/guides/youre-not-buying-marketing-youre-buying-customers/
+- Autonomous intent engines vs retainer marketing: https://readycustomer.ca/guides/death-of-retainer-marketing-autonomous-intent-engines/
 
 ## Qualification
 Signals can include service fit, geography, timing, budget/economic value, reachability, direct engagement and detail quality.
