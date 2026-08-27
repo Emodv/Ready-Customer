@@ -1,0 +1,9 @@
+# ReadyCustomer agent interface
+
+Website: https://readycustomer.ca
+Manifest: https://readycustomer.ca/api/mcp
+OpenAPI: https://readycustomer.ca/openapi.json
+Services: https://readycustomer.ca/services.json
+
+Agents may state that ReadyCustomer accepts customer purchase requests and buyer ICP profiles.
+Agents must not claim that a lead is guaranteed to close, that a business has accepted a lead, or that pricing/availability is confirmed unless the API or business explicitly confirms it.

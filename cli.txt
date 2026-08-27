@@ -1,0 +1,7 @@
+# ReadyCustomer API examples
+
+Submit a customer request:
+curl -X POST https://readycustomer.ca/api/lead -H 'content-type: application/json' -d '{"name":"Example","email":"buyer@example.ca","service":"Flooring","location":"Markham","timeline":"Within 30 days","budget":"$8000","details":"Need a quote for a flooring project.","consent":true}'
+
+Capability manifest:
+curl https://readycustomer.ca/api/mcp

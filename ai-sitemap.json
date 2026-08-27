@@ -1,0 +1,16 @@
+{
+  "site": "https://readycustomer.ca",
+  "name": "ReadyCustomer",
+  "description": "Qualified customer opportunity marketplace for Canadian businesses.",
+  "pages": [
+    {"url":"https://readycustomer.ca/","type":"homepage","purpose":"customer demand intake and business buyer intake"}
+  ],
+  "machine_readable": [
+    "https://readycustomer.ca/llms.txt",
+    "https://readycustomer.ca/services.json",
+    "https://readycustomer.ca/openapi.json",
+    "https://readycustomer.ca/mcp.txt",
+    "https://readycustomer.ca/api/mcp",
+    "https://readycustomer.ca/.well-known/agent.json"
+  ]
+}

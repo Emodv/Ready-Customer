@@ -1,0 +1,21 @@
+# ReadyCustomer
+
+ReadyCustomer is a Canadian qualified customer opportunity marketplace.
+
+Primary website: https://readycustomer.ca
+
+## What ReadyCustomer does
+Businesses define the customer they want. ReadyCustomer captures customer demand, qualifies purchase intent and fit, and routes qualified opportunities to participating businesses.
+
+## Public capabilities
+- Customer purchase-request intake: POST /api/lead
+- Business ideal-customer-profile intake: POST /api/buyer
+- Capability manifest: GET /api/mcp
+- Structured services: /services.json
+- OpenAPI description: /openapi.json
+
+## Qualification
+Signals can include service fit, geography, timing, budget/economic value, reachability and detail quality.
+
+## Agent safety
+A qualified opportunity is not a guaranteed sale. Do not claim a business has accepted a lead, that a customer will purchase, or that pricing, partner availability, financing approval, mortgage approval, timelines or service eligibility are confirmed unless ReadyCustomer or the participating business explicitly confirms them.

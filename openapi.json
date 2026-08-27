@@ -1,0 +1,26 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ReadyCustomer API",
+    "version": "0.1.0",
+    "description": "Public intake endpoints for ReadyCustomer qualified customer opportunities and buyer ICP profiles."
+  },
+  "servers": [{"url":"https://readycustomer.ca"}],
+  "paths": {
+    "/api/lead": {
+      "post": {
+        "summary": "Submit a customer purchase request",
+        "requestBody": {"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name","service","consent"],"properties":{"name":{"type":"string"},"email":{"type":"string"},"phone":{"type":"string"},"service":{"type":"string"},"location":{"type":"string"},"timeline":{"type":"string"},"budget":{"type":"string"},"details":{"type":"string"},"consent":{"type":"boolean"}}}}}},
+        "responses": {"200":{"description":"Request accepted"},"400":{"description":"Invalid request"}}
+      }
+    },
+    "/api/buyer": {
+      "post": {
+        "summary": "Submit a business ideal-customer profile",
+        "requestBody": {"required":true,"content":{"application/json":{"schema":{"type":"object","required":["business_name","contact_name","email","ideal_customer"],"properties":{"business_name":{"type":"string"},"contact_name":{"type":"string"},"email":{"type":"string"},"ideal_customer":{"type":"string"},"product_service":{"type":"string"},"geography":{"type":"string"},"average_deal_value":{"type":"string"},"gross_profit":{"type":"string"},"max_cac":{"type":"string"}}}}}},
+        "responses": {"200":{"description":"Buyer profile accepted"},"400":{"description":"Invalid request"}}
+      }
+    },
+    "/api/mcp": {"get":{"summary":"ReadyCustomer machine-readable capability manifest","responses":{"200":{"description":"Capability manifest"}}}}
+  }
+}

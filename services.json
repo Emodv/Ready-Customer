@@ -1,0 +1,18 @@
+{
+  "name": "ReadyCustomer",
+  "url": "https://readycustomer.ca",
+  "market": "Canada",
+  "product": "Qualified Customer Opportunities",
+  "services": [
+    {"id":"flooring","name":"Flooring customer opportunities","status":"pilot"},
+    {"id":"business-funding","name":"Business funding opportunities","status":"pilot"},
+    {"id":"mortgage-heloc","name":"Mortgage / HELOC opportunities","status":"pilot"},
+    {"id":"commercial-landscaping","name":"Commercial landscaping opportunities","status":"pilot"},
+    {"id":"insulation","name":"Insulation customer opportunities","status":"pilot"},
+    {"id":"construction","name":"Construction customer opportunities","status":"pilot"},
+    {"id":"flowers","name":"Flower and corporate gifting opportunities","status":"pilot"},
+    {"id":"dry-cleaning","name":"Dry cleaning customer opportunities","status":"pilot"},
+    {"id":"marketing","name":"Growth marketing customer opportunities","status":"pilot"}
+  ],
+  "qualification_note": "A qualified opportunity is not a guaranteed sale. Eligibility, pricing, availability, and final acceptance require confirmation by the participating business."
+}

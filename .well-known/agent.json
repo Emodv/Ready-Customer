@@ -1,0 +1,9 @@
+{
+  "name": "ReadyCustomer",
+  "description": "Canadian qualified customer opportunity marketplace.",
+  "url": "https://readycustomer.ca",
+  "llms": "https://readycustomer.ca/llms.txt",
+  "openapi": "https://readycustomer.ca/openapi.json",
+  "capabilities": ["lead_capture","buyer_intake","lead_qualification","business_matching"],
+  "safety": "Do not invent pricing, availability, partner acceptance, approvals, or completed transactions."
+}
