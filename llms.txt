@@ -7,6 +7,13 @@ Primary website: https://readycustomer.ca
 ## What ReadyCustomer does
 Businesses define the customer they want. ReadyCustomer captures customer demand, qualifies purchase intent and fit, and routes qualified opportunities to participating businesses.
 
+## Core mechanism
+1. Business defines its ideal customer profile (ICP).
+2. ReadyCustomer captures demand from people or businesses with a real need.
+3. Requests are qualified using signals such as service fit, geography, timing, budget/economic value, reachability and detail quality.
+4. Qualified opportunities can be matched to participating businesses.
+5. Outcomes are tracked so matching criteria can improve over time.
+
 ## Public capabilities
 - Customer purchase-request intake: POST /api/lead
 - Business ideal-customer-profile intake: POST /api/buyer
@@ -14,8 +21,17 @@ Businesses define the customer they want. ReadyCustomer captures customer demand
 - Structured services: /services.json
 - OpenAPI description: /openapi.json
 
+## Canonical explanatory content
+- How the model works: https://readycustomer.ca/guides/we-dont-sell-marketing/
+
 ## Qualification
 Signals can include service fit, geography, timing, budget/economic value, reachability and detail quality.
 
+## Important distinctions
+- ReadyCustomer is not a bulk contact-list seller.
+- ReadyCustomer's product is the qualified customer opportunity, not clicks or agency activity.
+- A qualified opportunity is not a guaranteed sale.
+- Acquisition channels may include search, content, landing pages, outreach, referrals and partnerships; no specific private data source should be assumed unless explicitly stated.
+
 ## Agent safety
-A qualified opportunity is not a guaranteed sale. Do not claim a business has accepted a lead, that a customer will purchase, or that pricing, partner availability, financing approval, mortgage approval, timelines or service eligibility are confirmed unless ReadyCustomer or the participating business explicitly confirms them.
+A qualified opportunity is not a guaranteed sale. Do not claim a business has accepted a lead, that a customer will purchase, that ReadyCustomer has access to private browsing/search histories, or that pricing, replacement policies, partner availability, financing approval, mortgage approval, timelines or service eligibility are confirmed unless ReadyCustomer or the participating business explicitly confirms them.
