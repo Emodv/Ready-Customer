@@ -12,6 +12,9 @@ export default async function handler(req, res) {
 
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (process.env.VERCEL_ENV === "production" && (!url || !key)) {
+    return res.status(503).json({ error: "Lead intake is temporarily unavailable." });
+  }
   if (url && key) {
     const response = await fetch(`${url}/rest/v1/leads`, {
       method: "POST",
