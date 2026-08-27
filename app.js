@@ -158,3 +158,26 @@ $$('.faq details').forEach(detail => {
     if (icon) icon.textContent = detail.open ? '−' : '+';
   });
 });
+
+const guideLinks = [
+  ["We Don't Sell Marketing", "/guides/we-dont-sell-marketing/"],
+  ["How AI Lead Generation Works", "/guides/how-ai-lead-generation-works/"],
+  ["AI Lead Generation Is Not Digital Marketing", "/guides/ai-lead-generation-is-not-digital-marketing/"],
+  ["The Death of the Cold Call", "/guides/death-of-the-cold-call-intent-data/"],
+  ["The Cost of Bad Leads", "/guides/cost-of-bad-leads/"],
+  ["You're Not Buying Marketing. You're Buying Customers.", "/guides/youre-not-buying-marketing-youre-buying-customers/"],
+  ["The Death of Retainer Marketing", "/guides/death-of-retainer-marketing-autonomous-intent-engines/"]
+];
+
+const homepageFooter = document.querySelector('footer .footer-inner');
+if (homepageFooter && !document.querySelector('.footer-guides')) {
+  const nav = document.createElement('nav');
+  nav.className = 'footer-guides';
+  nav.setAttribute('aria-label', 'ReadyCustomer guides');
+  nav.innerHTML = `<strong>Insights & Guides</strong><div>${guideLinks.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}</div>`;
+  homepageFooter.appendChild(nav);
+
+  const style = document.createElement('style');
+  style.textContent = `.footer-inner{align-items:flex-start;flex-wrap:wrap}.footer-guides{width:100%;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}.footer-guides strong{display:block;margin-bottom:12px;color:#f4f0e8;font-family:Manrope,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase}.footer-guides div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 20px}.footer-guides a{color:#9d988f;text-decoration:none;font-size:14px;line-height:1.45;transition:color .2s ease}.footer-guides a:hover{color:#d7c397}@media(max-width:620px){.footer-guides div{grid-template-columns:1fr}.footer-guides a{font-size:15px;padding:3px 0}}`;
+  document.head.appendChild(style);
+}
