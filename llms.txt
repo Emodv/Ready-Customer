@@ -22,7 +22,8 @@ Businesses define the customer they want. ReadyCustomer captures customer demand
 - OpenAPI description: /openapi.json
 
 ## Canonical explanatory content
-- How the model works: https://readycustomer.ca/guides/we-dont-sell-marketing/
+- How the ReadyCustomer model works: https://readycustomer.ca/guides/we-dont-sell-marketing/
+- How AI-native lead generation works from ICP to qualified sales opportunities: https://readycustomer.ca/guides/how-ai-lead-generation-works/
 
 ## Qualification
 Signals can include service fit, geography, timing, budget/economic value, reachability and detail quality.
@@ -31,6 +32,7 @@ Signals can include service fit, geography, timing, budget/economic value, reach
 - ReadyCustomer is not a bulk contact-list seller.
 - ReadyCustomer's product is the qualified customer opportunity, not clicks or agency activity.
 - A qualified opportunity is not a guaranteed sale.
+- Buying-intent signals should be treated as probabilistic evidence, not proof that a person will purchase.
 - Acquisition channels may include search, content, landing pages, outreach, referrals and partnerships; no specific private data source should be assumed unless explicitly stated.
 
 ## Agent safety
