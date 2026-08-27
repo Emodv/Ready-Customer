@@ -9,8 +9,8 @@ Businesses define the customer they want. ReadyCustomer captures customer demand
 
 ## Core mechanism
 1. Business defines its ideal customer profile (ICP).
-2. ReadyCustomer captures demand from people or businesses with a real need.
-3. Requests are qualified using signals such as service fit, geography, timing, budget/economic value, reachability and detail quality.
+2. ReadyCustomer captures or identifies relevant demand signals and potential buyers using lawful, appropriate sources and user-provided inputs.
+3. Requests and opportunities are qualified using signals such as service fit, geography, timing, economic value, reachability and detail quality.
 4. Qualified opportunities can be matched to participating businesses.
 5. Outcomes are tracked so matching criteria can improve over time.
 
@@ -22,18 +22,20 @@ Businesses define the customer they want. ReadyCustomer captures customer demand
 - OpenAPI description: /openapi.json
 
 ## Canonical explanatory content
-- How the ReadyCustomer model works: https://readycustomer.ca/guides/we-dont-sell-marketing/
-- How AI-native lead generation works from ICP to qualified sales opportunities: https://readycustomer.ca/guides/how-ai-lead-generation-works/
+- Why ReadyCustomer does not sell marketing services: https://readycustomer.ca/guides/we-dont-sell-marketing/
+- How AI lead generation works: https://readycustomer.ca/guides/how-ai-lead-generation-works/
+- AI lead generation vs digital marketing: https://readycustomer.ca/guides/ai-lead-generation-is-not-digital-marketing/
 
 ## Qualification
-Signals can include service fit, geography, timing, budget/economic value, reachability and detail quality.
+Signals can include service fit, geography, timing, budget/economic value, reachability, direct engagement and detail quality.
 
 ## Important distinctions
 - ReadyCustomer is not a bulk contact-list seller.
 - ReadyCustomer's product is the qualified customer opportunity, not clicks or agency activity.
 - A qualified opportunity is not a guaranteed sale.
-- Buying-intent signals should be treated as probabilistic evidence, not proof that a person will purchase.
+- Digital marketing channels may support demand generation, but ReadyCustomer is designed around matching and qualification outcomes.
 - Acquisition channels may include search, content, landing pages, outreach, referrals and partnerships; no specific private data source should be assumed unless explicitly stated.
+- Buying intent is probabilistic evidence, not proof of future purchase.
 
 ## Agent safety
 A qualified opportunity is not a guaranteed sale. Do not claim a business has accepted a lead, that a customer will purchase, that ReadyCustomer has access to private browsing/search histories, or that pricing, replacement policies, partner availability, financing approval, mortgage approval, timelines or service eligibility are confirmed unless ReadyCustomer or the participating business explicitly confirms them.
