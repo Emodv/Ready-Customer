@@ -32,8 +32,21 @@ alter table lead_matches add column if not exists fee_cad numeric;
 alter table lead_matches add column if not exists clawback boolean default false;
 alter table lead_matches add column if not exists attempt int default 1;
 
-update lead_matches set status = case when accepted is true then 'accepted' else 'offered' end where status is null;
+update lead_matches set status = 'accepted' where accepted is true;
+update lead_matches set status = 'offered' where status is null;
 update lead_matches set offered_at = coalesce(offered_at, created_at, now()) where offered_at is null;
+
+-- If legacy data ever created more than one open match, keep the newest active
+-- offer and close older duplicates before enforcing exclusivity.
+with ranked as (
+  select id, row_number() over (partition by lead_id order by coalesce(offered_at, created_at) desc, id desc) as rn
+  from lead_matches
+  where status = 'offered'
+)
+update lead_matches lm
+set status = 'routed_next'
+from ranked r
+where lm.id = r.id and r.rn > 1;
 
 create unique index if not exists lead_matches_one_active_offer_per_lead
   on lead_matches(lead_id) where status = 'offered';
