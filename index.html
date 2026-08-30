@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
-  <style>.footer-inner{align-items:flex-start;flex-wrap:wrap}.footer-guides{width:100%;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}.footer-guides strong{display:block;margin-bottom:12px;color:#f4f0e8;font-family:Manrope,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase}.footer-guides div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 20px}.footer-guides a{color:#9d988f;text-decoration:none;font-size:14px;line-height:1.45;transition:color .2s ease}.footer-guides a:hover{color:#d7c397}@media(max-width:620px){.footer-guides div{grid-template-columns:1fr}.footer-guides a{font-size:15px;padding:3px 0}}</style>
+  <style>.footer-inner{align-items:flex-start;flex-wrap:wrap}.footer-guides{width:100%;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}.footer-guides strong{display:block;margin-bottom:12px;color:#f4f0e8;font-family:Manrope,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase}.footer-guides div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 20px}.footer-guides a{color:#9d988f;text-decoration:none;font-size:14px;line-height:1.45;transition:color .2s ease}.footer-guides a:hover{color:#d7c397}.service-card.featured-service{border-color:#8f7a4d;box-shadow:0 18px 60px rgba(188,163,106,.12);transform:translateY(-2px)}.waitlist-tag{display:block;margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8e8a82}.service-card.waitlist-service{opacity:.72}@media(max-width:620px){.footer-guides div{grid-template-columns:1fr}.footer-guides a{font-size:15px;padding:3px 0}}</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"ReadyCustomer","url":"https://readycustomer.ca","description":"Qualified customer opportunity marketplace for Canadian businesses."}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ReadyCustomer","url":"https://readycustomer.ca"}</script>
 </head>
@@ -62,29 +62,10 @@
         <div class="kicker">How it works</div>
         <h2>Simple by design.<br><em>Valuable by outcome.</em></h2>
       </div>
-
       <div class="story-carousel" data-carousel>
-        <article class="story-card active">
-          <div class="story-index">01</div>
-          <div class="story-icon">◎</div>
-          <h3>Describe the need</h3>
-          <p>Service, location, timing, budget and the few details that actually matter.</p>
-          <span class="story-meta">30–60 seconds</span>
-        </article>
-        <article class="story-card">
-          <div class="story-index">02</div>
-          <div class="story-icon">◇</div>
-          <h3>We qualify</h3>
-          <p>We score fit, intent, urgency, economic value and contactability.</p>
-          <span class="story-meta">Human value, AI speed</span>
-        </article>
-        <article class="story-card">
-          <div class="story-index">03</div>
-          <div class="story-icon">↗</div>
-          <h3>We match</h3>
-          <p>Only relevant opportunities move forward to an appropriate participating business.</p>
-          <span class="story-meta">No noise</span>
-        </article>
+        <article class="story-card active"><div class="story-index">01</div><div class="story-icon">◎</div><h3>Describe the need</h3><p>Service, location, timing, budget and the few details that actually matter.</p><span class="story-meta">30–60 seconds</span></article>
+        <article class="story-card"><div class="story-index">02</div><div class="story-icon">◇</div><h3>We qualify</h3><p>We score fit, intent, urgency, economic value and contactability.</p><span class="story-meta">Human value, AI speed</span></article>
+        <article class="story-card"><div class="story-index">03</div><div class="story-icon">↗</div><h3>We match</h3><p>Only relevant opportunities move forward to an appropriate participating business.</p><span class="story-meta">No noise</span></article>
       </div>
       <div class="carousel-dots" aria-hidden="true"><button class="active"></button><button></button><button></button></div>
     </section>
@@ -93,19 +74,18 @@
       <div class="section-head compact">
         <div class="kicker">For customers</div>
         <h2>What are you<br><em>looking to buy?</em></h2>
-        <p>Choose a category. We only ask for the details needed to make a useful match.</p>
+        <p>Flooring is live in the GTA. Other categories are on the waitlist while we prove the transaction loop.</p>
       </div>
-
       <div class="service-carousel" id="serviceCarousel">
-        <button class="service-card" data-service="Flooring"><span class="service-num">01</span><span class="service-name">Flooring</span><span class="service-arrow">↗</span></button>
-        <button class="service-card" data-service="Business funding"><span class="service-num">02</span><span class="service-name">Business funding</span><span class="service-arrow">↗</span></button>
-        <button class="service-card" data-service="Insulation"><span class="service-num">03</span><span class="service-name">Insulation</span><span class="service-arrow">↗</span></button>
-        <button class="service-card" data-service="Commercial landscaping"><span class="service-num">04</span><span class="service-name">Commercial landscaping</span><span class="service-arrow">↗</span></button>
-        <button class="service-card" data-service="Mortgage / HELOC"><span class="service-num">05</span><span class="service-name">Mortgage / HELOC</span><span class="service-arrow">↗</span></button>
-        <button class="service-card" data-service="Construction"><span class="service-num">06</span><span class="service-name">Construction</span><span class="service-arrow">↗</span></button>
-        <button class="service-card" data-service="Flowers"><span class="service-num">07</span><span class="service-name">Flowers</span><span class="service-arrow">↗</span></button>
-        <button class="service-card" data-service="Dry cleaning"><span class="service-num">08</span><span class="service-name">Dry cleaning</span><span class="service-arrow">↗</span></button>
-        <button class="service-card" data-service="Marketing"><span class="service-num">09</span><span class="service-name">Marketing</span><span class="service-arrow">↗</span></button>
+        <button class="service-card featured-service" data-service="Flooring"><span class="service-num">01</span><span class="service-name">Flooring</span><span class="service-arrow">↗</span></button>
+        <button class="service-card waitlist-service" data-service="Business funding"><span class="service-num">02</span><span class="service-name">Business funding</span><span class="service-arrow">↗</span><small class="waitlist-tag">Waitlist</small></button>
+        <button class="service-card waitlist-service" data-service="Insulation"><span class="service-num">03</span><span class="service-name">Insulation</span><span class="service-arrow">↗</span><small class="waitlist-tag">Waitlist</small></button>
+        <button class="service-card waitlist-service" data-service="Commercial landscaping"><span class="service-num">04</span><span class="service-name">Commercial landscaping</span><span class="service-arrow">↗</span><small class="waitlist-tag">Waitlist</small></button>
+        <button class="service-card waitlist-service" data-service="Mortgage / HELOC"><span class="service-num">05</span><span class="service-name">Mortgage / HELOC</span><span class="service-arrow">↗</span><small class="waitlist-tag">Waitlist</small></button>
+        <button class="service-card waitlist-service" data-service="Construction"><span class="service-num">06</span><span class="service-name">Construction</span><span class="service-arrow">↗</span><small class="waitlist-tag">Waitlist</small></button>
+        <button class="service-card waitlist-service" data-service="Flowers"><span class="service-num">07</span><span class="service-name">Flowers</span><span class="service-arrow">↗</span><small class="waitlist-tag">Waitlist</small></button>
+        <button class="service-card waitlist-service" data-service="Dry cleaning"><span class="service-num">08</span><span class="service-name">Dry cleaning</span><span class="service-arrow">↗</span><small class="waitlist-tag">Waitlist</small></button>
+        <button class="service-card waitlist-service" data-service="Marketing"><span class="service-num">09</span><span class="service-name">Marketing</span><span class="service-arrow">↗</span><small class="waitlist-tag">Waitlist</small></button>
       </div>
       <div class="swipe-hint"><span>Swipe to explore</span><span>↔</span></div>
     </section>
@@ -127,12 +107,7 @@
       </div>
     </section>
 
-    <section class="section shell reveal principle">
-      <div class="quote-mark">“</div>
-      <p>Qualified opportunities are the product.</p>
-      <span>ReadyCustomer</span>
-    </section>
-
+    <section class="section shell reveal principle"><div class="quote-mark">“</div><p>Qualified opportunities are the product.</p><span>ReadyCustomer</span></section>
     <section class="section shell reveal faq" id="faq">
       <div class="kicker">Good to know</div>
       <details><summary>What is a qualified customer opportunity?<span>+</span></summary><p>A person or business whose request matches defined criteria such as service, geography, timing, buying intent and contactability. A qualified opportunity is not a guaranteed sale.</p></details>
@@ -167,6 +142,7 @@
     <div class="sheet-head"><div><div class="kicker">Private request</div><h2>Find my match.</h2></div><button class="sheet-close" data-close-sheet aria-label="Close">×</button></div>
     <form id="leadForm" class="progressive-form">
       <input type="hidden" name="service" id="leadService" required>
+      <input type="hidden" name="service_slug" id="leadServiceSlug">
       <div class="form-step active" data-step="1">
         <label class="field-label">What do you need?</label>
         <input name="service_display" id="serviceDisplay" placeholder="e.g. Hardwood flooring" autocomplete="off">
@@ -184,7 +160,7 @@
         </div>
         <input type="hidden" name="timeline">
         <label class="field-label">Approximate budget <span>optional</span></label>
-        <input name="budget" placeholder="$">
+        <input name="budget" type="number" min="0" step="100" inputmode="numeric" placeholder="Budget CAD">
         <div class="form-nav"><button type="button" class="back-btn" data-back>← Back</button><button type="button" class="primary-cta" data-next>Continue →</button></div>
       </div>
       <div class="form-step" data-step="3">
@@ -218,9 +194,10 @@
       </div>
       <div class="form-step" data-step="3">
         <label class="field-label">What is one customer worth?</label>
-        <div class="two"><input name="average_deal_value" placeholder="Average sale $"><input name="gross_profit" placeholder="Gross profit $"></div>
-        <input name="max_cac" placeholder="Maximum acceptable CAC $">
-        <label class="field-label">Your contact</label><input name="contact_name" placeholder="Your name" required><input name="email" type="email" placeholder="Business email" required>
+        <div class="two"><input name="average_deal_value" type="number" min="0" step="100" inputmode="numeric" placeholder="Average sale CAD"><input name="gross_profit" type="number" min="0" step="100" inputmode="numeric" placeholder="Gross profit CAD"></div>
+        <input name="max_cac" type="number" min="0" step="100" inputmode="numeric" placeholder="Maximum acceptable CAC CAD">
+        <input name="min_budget_cad" type="number" min="0" step="100" inputmode="numeric" placeholder="Minimum project budget CAD">
+        <label class="field-label">Your contact</label><input name="contact_name" placeholder="Your name" required><input name="phone" type="tel" placeholder="Business phone" autocomplete="tel"><input name="email" type="email" placeholder="Business email" required>
         <div class="form-nav"><button type="button" class="back-btn" data-back>← Back</button><button class="primary-cta gold" type="submit">Send my ICP →</button></div>
         <div id="buyerStatus" class="status" aria-live="polite"></div>
       </div>
