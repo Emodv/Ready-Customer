@@ -158,3 +158,22 @@ Prove that a qualified opportunity can be generated and monetized in one launch 
 1. Capture the first live flooring request and route it to the pilot flooring buyer.
 2. Load the first 3 buyer ICP/economics profiles into the database.
 3. Track the complete outcome from source through ReadyCustomer fee.
+
+## v0.2 shipped — transaction layer
+
+Automated now:
+
+- Flooring-only GTA qualification using service, geography, timing, budget, consent and contactability.
+- Numeric buyer economics and computed maximum CPL.
+- Exclusive routing to one ranked buyer at a time.
+- 15-minute offer expiry.
+- Accept / decline actions and fee assignment.
+- Expired or declined offers route to the next eligible buyer, up to three attempts.
+- Invalid-lead clawback status within 24 hours.
+
+Still manual / optional:
+
+- SMS delivery is optional and only runs when Twilio environment variables exist.
+- Payment collection is not implemented; `fee_cad` is recorded only.
+- No human review queue is included in v0.2.
+- On the current Vercel Hobby project, automatic five-minute cron scheduling is not configured; `/api/expire` is ready for an external scheduler or a plan that supports the required cadence.
