@@ -14,6 +14,14 @@ test('match ranks approved GTA flooring buyer over paused/non-geo', () => {
   assert.equal(ranked.length, 1);
 });
 
+test('never routes a qualified lead to a public buyer submission before approval', () => {
+  const lead = { service_slug:'flooring', geo_normalized:'markham', location:'Markham', budget_cad:8000 };
+  const buyers = [
+    { id:'new-buyer', status:'new', service_slug:'flooring', geo_tokens:['markham'], max_cpl_cad:250, exclusive:true, priority:1 }
+  ];
+  assert.deepEqual(matchLeadToBuyers(lead, buyers), []);
+});
+
 test('expiry routing picks second buyer after first was attempted', () => {
   const lead = { service_slug:'flooring', geo_normalized:'markham', location:'Markham', budget_cad:8000 };
   const buyers = [
