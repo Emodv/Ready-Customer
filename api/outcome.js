@@ -2,8 +2,19 @@ import { hasSupabase, rest } from '../lib/supabase.js';
 import { getMatch, updateMatch } from '../lib/routing.js';
 import { validateOutcome } from '../lib/outcome.js';
 
+function authorized(req) {
+  const key = process.env.ADMIN_KEY;
+  if (key) return req.headers['x-admin-key'] === key;
+  return process.env.VERCEL_ENV !== 'production';
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+  if (!authorized(req)) {
+    return res.status(process.env.ADMIN_KEY ? 401 : 503).json({
+      error: 'Outcome reporting is not configured or authorized.'
+    });
+  }
   if (!hasSupabase()) return res.status(503).json({ error: 'Database is not configured.' });
 
   const { match_id: matchId } = req.body || {};
