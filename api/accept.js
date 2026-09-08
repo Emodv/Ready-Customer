@@ -1,6 +1,16 @@
 import { hasSupabase, rest } from '../lib/supabase.js';
 import { getLead, getMatch, routeAfterClosedMatch, updateLead, updateMatch } from '../lib/routing.js';
 import { pickFee } from '../lib/match.js';
+import { clean } from '../lib/validate.js';
+
+const DECLINE_REASONS = new Set(['budget_too_low', 'outside_service_area', 'wrong_service', 'timing', 'capacity', 'duplicate', 'other']);
+const INVALID_REASONS = new Set(['bad_contact', 'fake_or_spam', 'duplicate', 'wrong_service', 'outside_service_area', 'other']);
+
+function feedback(body, allowed) {
+  const reason = clean(body?.reason, 80).toLowerCase();
+  const note = clean(body?.note, 500) || null;
+  return { reason: allowed.has(reason) ? reason : (reason ? 'other' : null), note };
+}
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -22,9 +32,12 @@ export default async function handler(req, res) {
     if (action === 'invalid') {
       const offeredAt = new Date(match.offered_at || match.created_at);
       if (now.getTime() - offeredAt.getTime() > 24 * 60 * 60 * 1000) return res.status(409).json({ error: 'Invalid-lead clawback window has expired.' });
-      const updated = await updateMatch(match.id, { status: 'invalid', clawback: true });
+      const fb = feedback(req.body, INVALID_REASONS);
+      const updated = await updateMatch(match.id, {
+        status: 'invalid', clawback: true, invalid_reason: fb.reason, buyer_feedback_note: fb.note, feedback_at: now.toISOString()
+      });
       await updateLead(match.lead_id, { status: 'invalid' });
-      return res.status(200).json({ ok: true, status: 'invalid', clawback: true, match: updated });
+      return res.status(200).json({ ok: true, status: 'invalid', clawback: true, reason: fb.reason, match: updated });
     }
 
     if (match.status !== 'offered') return res.status(409).json({ error: `Match is already ${match.status}.` });
@@ -34,8 +47,10 @@ export default async function handler(req, res) {
     }
 
     if (action === 'decline') {
+      const fb = feedback(req.body, DECLINE_REASONS);
+      await updateMatch(match.id, { decline_reason: fb.reason, buyer_feedback_note: fb.note, feedback_at: now.toISOString() });
       const routed = await routeAfterClosedMatch(match, 'declined');
-      return res.status(200).json({ ok: true, status: 'declined', routed_next: routed.matched, next_match_id: routed.next?.match?.id || null });
+      return res.status(200).json({ ok: true, status: 'declined', reason: fb.reason, routed_next: routed.matched, next_match_id: routed.next?.match?.id || null });
     }
 
     const buyers = await rest('buyers', { query: { id: `eq.${match.buyer_id}`, select: '*', limit: 1 } });
