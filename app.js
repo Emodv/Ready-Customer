@@ -1,6 +1,14 @@
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
+const LIVE_SERVICES = new Set([
+  'flooring','business funding','insulation','commercial landscaping','mortgage / heloc','construction','marketing'
+]);
+
+function slugifyService(service = '') {
+  return String(service).trim().toLowerCase().replace(/\s*\/\s*/g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 function enhanceV02Forms() {
   const leadForm = $('#leadForm');
   if (leadForm && !leadForm.querySelector('[name="service_slug"]')) {
@@ -25,14 +33,20 @@ function enhanceV02Forms() {
 
   $$('.service-card').forEach((card) => {
     const service = (card.dataset.service || '').toLowerCase();
-    if (service === 'flooring') {
-      card.classList.add('featured-service');
-      card.setAttribute('aria-label', 'Flooring — live in GTA');
+    const tag = card.querySelector('.waitlist-tag');
+    if (LIVE_SERVICES.has(service)) {
+      card.classList.remove('waitlist-service');
+      if (service === 'flooring') card.classList.add('featured-service');
+      card.setAttribute('aria-label', `${card.dataset.service} — live in GTA`);
+      if (tag) tag.remove();
     } else {
       card.classList.add('waitlist-service');
-      if (!card.querySelector('.waitlist-tag')) card.insertAdjacentHTML('beforeend', '<small class="waitlist-tag">Waitlist</small>');
+      if (!tag) card.insertAdjacentHTML('beforeend', '<small class="waitlist-tag">Waitlist</small>');
     }
   });
+
+  const launchCopy = $('#need .section-head p');
+  if (launchCopy) launchCopy.textContent = 'Multiple service categories are now live in the GTA while we measure which produce the strongest qualified demand and buyer outcomes.';
 
   const style = document.createElement('style');
   style.textContent = '.service-card.featured-service{border-color:#8f7a4d;box-shadow:0 18px 60px rgba(188,163,106,.12);transform:translateY(-2px)}.waitlist-tag{display:block;margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8e8a82}.service-card.waitlist-service{opacity:.72}';
@@ -56,7 +70,7 @@ async function submitForm(form, endpoint, statusEl) {
     if (!r.ok) throw new Error(data.error || 'Something went wrong');
     if (form.id === 'leadForm') {
       statusEl.textContent = data.matched
-        ? 'A GTA flooring company has 15 minutes to accept your request.'
+        ? 'A matching participating business has a limited window to accept your request.'
         : 'We received this. We’ll introduce a business when a fit is available.';
     } else {
       statusEl.textContent = data.message || 'Buyer profile received.';
@@ -117,7 +131,7 @@ $$('.service-card').forEach(card => {
     const slug = $('#leadServiceSlug');
     if (hidden) hidden.value = service;
     if (display) display.value = service;
-    if (slug) slug.value = service.toLowerCase() === 'flooring' ? 'flooring' : '';
+    if (slug) slug.value = slugifyService(service);
     openSheet('#leadSheet');
   });
 });
